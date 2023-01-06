@@ -1,6 +1,4 @@
-/* body {
-    background-color: salmon;
-} */
+@import url("https://use.typekit.net/nqa1brn.css");
 :root {
     --dark: black;
     --light: whitesmoke;
@@ -11,10 +9,11 @@
     background-color: var(--dark);
     color: var(--light)
 }
-/* body {
- font-family   
+body {
+    font-family: fino-sans, sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
-    */
 header {
     height: 80vh;
     display: flex;
@@ -22,6 +21,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 10% 5%;
+    font-size: 400%;
     /* font size */
     /* background-color: var(--dark); */
 }
