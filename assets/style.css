@@ -1,7 +1,9 @@
 @import url("https://use.typekit.net/nqa1brn.css");
+
 :root {
     --dark: black;
     --light: whitesmoke;
+    --animate-duration: 2s;
 }
 * {
     margin: 0;
@@ -35,6 +37,9 @@ header {
     display: flex;
     justify-content: center;
 }
+/* .animate__fadeIn {
+    --animate-delay: 6s;
+} */
 .calulatorTitle {
     width: 100%;
     display: flex;
