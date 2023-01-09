@@ -11,6 +11,9 @@
     background-color: var(--dark);
     color: var(--light)
 }
+html{
+    scroll-behavior: smooth;
+}
 body {
     font-family: fino-sans, sans-serif;
     font-weight: 700;
@@ -18,6 +21,7 @@ body {
 }
 header {
     height: 80vh;
+    margin-bottom: 10vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,3 +49,20 @@ header {
     display: flex;
     justify-content: flex-end;
 }
+.arrowContainer {
+    display: flex;
+}
+.arrowContainer span {
+    display: inline-block;
+    border:solid  var(--light);
+    border-width: 0 3px 3px 0;
+    /* border-height: 0 15px 15px 0; */
+    padding: 20px;
+}
+.arrow {
+    transform: rotate(45deg);
+}
+
+/* .rightArr {
+    transform: rotate(-30deg);
+} */

@@ -14,12 +14,23 @@
 <body>
     <header>
         <h1 class="aSimple animate__animated animate__fadeInLeft">a simple</h1>
-        <h1 class="gpaTitle animate__animated animate__fadeIn animate_slow">gpa</h1>
+        <h1 class="gpaTitle animate__animated animate__fadeIn animate_slow">grade</h1>
         <h1 class="calulatorTitle animate__animated animate__fadeInRight">calculator</h1>
-        <a><span class="leftArr"></span><span class="rightArr"></span></a>
+        <a class="arrowContainer" href="#main">
+        <span class="arrow"></span>
+        <!-- <span class="rightArr"></span> -->
+        </a>
     </header>
-    <main>
-        <h1>how many classes do you have?</h1>
+    <main id="main">
+        <h1>What class is this do you have?</h1>
+        <textarea></textarea>
+        <table id="inputGrades">
+            <tr> 
+                <th>Assigment</th>
+                <th>Grade</th>
+                <th>Weight</th>
+            </tr>
+        </table>
     </main>
 <script src="./assets/script.js"></script> 
 </body>
