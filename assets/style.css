@@ -62,7 +62,13 @@ header {
 .arrow {
     transform: rotate(45deg);
 }
-
-/* .rightArr {
-    transform: rotate(-30deg);
+main {
+    text-align: center;
+}
+.tableContainer {
+    display: flex;
+    justify-content: center;
+}
+/* table {
+    
 } */
