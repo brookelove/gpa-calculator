@@ -21,17 +21,22 @@
         <!-- <span class="rightArr"></span> -->
         </a>
     </header>
+    <aside>
+        <h1>My Classes</h1>
+    </aside>
     <main id="main">
-        <h1>What class is this for?</h1>
+        <h1>Name of the class:</h1>
         <input></input>
         <button>SEND</button>
         <div class="tableContainer">
-        <table id="inputGrades">
-            <tr> 
-                <th>Assigment</th>
-                <th>Grade</th>
-                <th>Weight</th>
-            </tr>
+        <table >
+            <thead> 
+                <th>Assigment Name</th>
+                <th>Grade (%)</th>
+                <th>Weight (%)</th>
+            </thead>
+            <tbody id="inputGrades"></tbody>
+            </tbody>
         </table>
         </div>  
         <button id="addRow">Add a Grade </button>
