@@ -1,47 +1,53 @@
 // import "animate.css";
 console.log("linked");
 let main = document.getElementById("main");
-// let table = document.getElementById("gradeTable");
 let tableBody = document.getElementById("inputGrades");
 let addRowBTN = document.getElementById("addRow");
 let calculateBTN = document.getElementById("calculateGrade");
 let assignmentInput = document.getElementById("assignment");
 let gradeInput = document.getElementById("grade");
 let weightInput = document.getElementById("weight");
+let className = document.getElementById("className");
+let results = document.getElementById("results");
+let saveBttn = document.getElementById("saveClassBttn");
 let gradeArr = [];
+let start = 0;
 
-// let askAmountButton = () => {
-//   let askAmount = document.createElement("h1");
-//   askAmount.innerHTML = "What class is this for?";
-//   let askText = document.createElement("input");
-//   let askButton = document.createElement("button");
-// };
-// console.log(document.getElementById("gradeTable").rows[1].cells[0].innerHTML);
-// pass in the parameter of user input
 let calculateMyGrade = () => {
-  //   console.log(gradeArr.length);
+  //   className.value = "";
   let weightedArr = [];
-  let start = 0;
+
   for (let i = 0; i < gradeArr.length; i++) {
-    // console.log(gradeArr[i].assignment);
-    // console.log(typeof gradeArr[i].weight);
-    // console.log(typeof gradeArr[i].grade);
     let weightNum = parseFloat(gradeArr[i].weight) / 100;
-    console.log(weightNum);
     let weightedGrade = weightNum * parseFloat(gradeArr[i].grade);
-    console.log(weightedGrade);
     weightedArr.push(weightedGrade);
-    // console.log(weighedArr);
   }
-  console.log(weightedArr);
-  //   console.log(weighedArr.reduce((a, b) => a + b));
   weightedArr.forEach((item) => {
     start += item;
   });
-  console.log(start);
+  //   console.log(start);
+  generateGrade(start);
+  className.value = "";
 };
-// calculateMyGrade();
-// createGradeInput();
+
+let generateGrade = (num) => {
+  // if else statement to either create a new div or write over a current one
+  //   console.log(className);
+  //   console.log(className.value);
+  //   console.log(num);
+  //   if (className.value == " ") {
+  //     className.value = "Class";
+  //   }
+  let classH1 = document.createElement("h1");
+  let totalGrade = document.createElement("h2");
+  let saveBttn = document.createElement("button");
+  classH1.innerText = className.value;
+  totalGrade.innerText = String(num).concat("%");
+  saveBttn.innerText = "Save Class";
+  saveBttn.setAttribute = ("id", "saveClassBttn");
+  results.append(classH1, totalGrade, saveBttn);
+};
+
 let addNewRow = () => {
   let newGrade = {
     assignment: assignmentInput.value,
@@ -70,10 +76,6 @@ let addNewRow = () => {
   editBttnBox.appendChild(editBttn);
 
   newRow.append(assignmentBox, gradeBox, weightBox, delBttn, editBttn);
-  //   newRow.appendChild(gradeBox);
-  //   newRow.appendChild(weightBox);
-  //   newRow.appendChild(delBttnBox);
-  //   newRow.appendChild(editBttnBox);
 
   tableBody.appendChild(newRow);
   assignmentInput.value = "";
