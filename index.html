@@ -26,21 +26,69 @@
     </aside>
     <main id="main">
         <h1>Name of the class:</h1>
-        <input></input>
-        <button>SEND</button>
-        <div class="tableContainer">
-        <table >
+        <input id="className"></input>
+        <form>
+            <h2>Assignment:</h1>
+            <input id="assignment"></input>
+            <h2>Grade:</h2>
+            <input id="grade" type="number"></input>
+            <h2>Weight:</h2>
+            <input id="weight" type="number"></input>
+            </form>
+    <button id="addRow">Add a Grade </button>
+    <div class="tableContainer">
+        <table id="gradeTable">
             <thead> 
                 <th>Assigment Name</th>
                 <th>Grade (%)</th>
                 <th>Weight (%)</th>
             </thead>
             <tbody id="inputGrades"></tbody>
+            <!-- <tr>
+                <td><input type="text" id="assgnName_1"></input></td>
+                <td><input type="number" id="grade_1"></input></td>
+                <td><input type="number" id="weight_1"></input></td>
+                <td><button>clear</button></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="assgnName_2"></input></td>
+                <td><input type="number" id="grade_2"></input></td>
+                <td><input type="number" id="weight_2"></input></td>
+                <td><button>clear</button></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="assgnName_3"></input></td>
+                <td><input type="number" id="grade_3"></input></td>
+                <td><input type="number" id="weight_3"></input></td>
+                <td><button>clear</button></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="assgnName_4"></input></td>
+                <td><input type="number" id="grade_4"></input></td>
+                <td><input type="number" id="weight_4"></input></td>
+                <td><button>clear</button></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="assgnName_5"></input></td>
+                <td><input type="number" id="grade_5"></input></td>
+                <td><input type="number" id="weight_5"></input></td>
+                <td><button>clear</button></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="assgnName_6"></input></td>
+                <td><input type="number" id="grade_6"></input></td>
+                <td><input type="number" id="weight_6"></input></td>
+                <td><button>clear</button></td>
+            </tr> -->
             </tbody>
         </table>
-        </div>  
-        <button id="addRow">Add a Grade </button>
+    </div>  
+    <button id="calculateGrade">Calculate</button>
+        
     </main>
+    <footer>
+        made with js. html. css
+    </footer>
 <script src="./assets/script.js"></script> 
 </body>
 </html>
