@@ -1,20 +1,24 @@
 @import url("https://use.typekit.net/nqa1brn.css");
 
 :root {
-    --dark: rgb(4, 23, 56);
+    /* --dark: rgb(4, 23, 56); */
+    --dark: #3a5154;
+    /* --dark:#1d2625; */
     --light: whitesmoke;
+    --title: #929aa2;
     --animate-duration: 2s;
 }
 * {
     margin: 0;
     padding: 0;
     background-color: var(--dark);
-    color: var(--light)
+    
 }
 html{
     scroll-behavior: smooth;
 }
 body {
+    
     font-family: fino-sans, sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -28,6 +32,7 @@ header {
     justify-content: space-between;
     padding: 10% 5%;
     font-size: 400%;
+    color: var(--title)
     /* font size */
     /* background-color: var(--dark); */
 }
@@ -62,42 +67,38 @@ header {
 .arrow {
     transform: rotate(45deg);
 }
-main {
+.inputContainer {
+    display: flex;
+    height: 100%;
+    color: var(--light);
+}
+.savedClasses {
+    width: 20%;
     text-align: center;
+}
+.main {
+    text-align: center;
+    width: 80%;
 }
 input {
     background-color: var(--light);
     color: black;
+    border-radius: 10px;
+    height: 30px;
+}
+.classContainer, .formContainer {
+    margin: 7% 0;
+}
+.formContainer {
+    display: flex;
+    
+}
+.col {
+    flex:50%
 }
 .tableContainer {
-    /* height: 80vh; */
     display: flex;
+    height: 60vh;
+    padding-top: 7%;
     justify-content: center;
-}
-/* table {
-    width: 70%; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-} */
-tr {
-    margin: 100% 0;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
-}
-td {
-    width: fit-content;
-}
-td input{
-    /* background-color: var(--light); */
-    height: 40px;
-    width: 200px;
-    border-radius: 5px;
-    /* color: black;  */
-}
-td button {
-    margin-left: 31px;
-    width: fit-content;
-    padding: 5px;
 }

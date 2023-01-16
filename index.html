@@ -20,20 +20,29 @@
         <span class="arrow"></span>
         </a>
     </header>
-    <aside>
+    <div class="inputContainer">
+    <aside class="savedClasses">
         <h1>My Classes</h1>
     </aside>
-    <main id="main">
-        <h1>Name of the class:</h1>
-        <input id="className"></input>
-        <form>
-            <h2>Assignment:</h1>
-            <input id="assignment"></input>
-            <h2>Grade:</h2>
-            <input id="grade" type="number"></input>
-            <h2>Weight:</h2>
-            <input id="weight" type="number"></input>
-            </form>
+    <main id="main" class="main">
+        <div class="classContainer">
+            <h1>Name of the class:</h1>
+            <input id="className"></input>
+        </div>
+        <form class="formContainer">
+            <div class="col">
+                <h2>Assignment:</h1>
+                <input id="assignment"></input>
+            </div>
+            <div class="col">
+                <h2>Grade:</h2>
+                <input id="grade" type="number"></input>
+            </div>
+            <div class="col">
+                <h2>Weight:</h2>
+                <input id="weight" type="number"></input>
+            </div>
+        </form>
     <button id="addRow">Add This Grade </button>
     <div class="tableContainer">
         <table id="gradeTable">
@@ -49,6 +58,7 @@
     <button id="calculateGrade">Calculate</button>
         
     </main>
+</div>
     <section id="results">
 
     </section>
