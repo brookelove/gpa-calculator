@@ -30,9 +30,21 @@ Just a simple grade calculator in a minimalist format.
 
 > I wanted to make something more minimalistic that is easy to navigate. There are many grade calculators that have too much going on and some can be out of date in terms of overall look on the website. I wanted to get bakc to basics and make a project using plain CSS, HTML, and JS.
 
-## Instalation 
+<p align="center">
+    <img src="./assets/images/title.png"
+     alt="Markdown Monster icon"
+     width='400'/>
+</p>
 
-------------------
+<p align="center">
+    <img src="./assets/images/input.png"
+     alt="Markdown Monster icon"
+     width='400'/>
+</p>
+
+## Instalation
+
+---------------------
 
 1. First clone the repo in your terimnal
 
