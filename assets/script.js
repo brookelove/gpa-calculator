@@ -27,13 +27,13 @@ let calculateMyGrade = () => {
 };
 let renderTable = () => {
   let infor = event.target.innerText;
-  console.log("clicked");
-  console.log(infor); //gives the inner text of the button that has been clicked
+  //   console.log("clicked");
+  //   console.log(infor); //gives the inner text of the button that has been clicked
   //   console.log(key)
   className.value = infor;
   let grabStorage = JSON.parse(localStorage.getItem(infor));
-  console.log(grabStorage); //returns an array of the information for giving an array of objects
-
+  //   console.log(grabStorage); //returns an array of the information for giving an array of objects
+  tableBody.innerHTML = "";
   for (let i = 0; i < grabStorage.length; i++) {
     let newRow = document.createElement("tr");
     let assignmentBox = document.createElement("td");
@@ -62,7 +62,7 @@ let clickEvent = () => {
 let renderButtons = () => {
   savedContanier.innerHTML = "";
   let classList = [];
-  console.log(classList);
+  //   console.log(classList);
   for (var i = 0; i < localStorage.length; i++) {
     classList[i] = localStorage.getItem(localStorage.key(i));
   }
@@ -84,14 +84,27 @@ let renderButtons = () => {
   //   grabBttns.addEventListener("click", renderTable);
 };
 let storeClass = () => {
-  localStorage.setItem(className.value.toLowerCase(), JSON.stringify(gradeArr));
-  className.value = "";
-  renderButtons();
+  //   console.log(className.value);
+  if (className.value == "") {
+    window.confirm("If you would like to save this class please input a name!");
+  }
+  //   console.log(tableBody);
+  if (tableBody.hasChildNodes()) {
+    tableBody.innerHTML = "";
+    localStorage.setItem(
+      className.value.toLowerCase(),
+      JSON.stringify(gradeArr)
+    );
+    className.value = "";
+    renderButtons();
+  } else {
+    window.confirm("Dont forget to put your grades in the table!");
+  }
 };
 
 let generateGrade = (num) => {
   results.innerHTML = "";
-  tableBody.innerHTML = "";
+
   //   let tableRow = document.getElementsByTagName("tr");
   //   tableRow.innerHTML = "";
   let classH1 = document.createElement("h1");
