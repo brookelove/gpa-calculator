@@ -1,5 +1,3 @@
-// import "animate.css";
-// console.log("linked");
 let main = document.getElementById("main");
 let tableBody = document.getElementById("inputGrades");
 let addRowBTN = document.getElementById("addRow");
@@ -10,13 +8,11 @@ let weightInput = document.getElementById("weight");
 let className = document.getElementById("className");
 let results = document.getElementById("results");
 let savedContanier = document.getElementById("savedContainer");
-// let saveBttn = document.getElementById("save");
+
 let gradeArr = [];
 let start = 0;
-// console.log(document.getElementsByTagName("button"));
 
 let calculateMyGrade = () => {
-  //   className.value = "";
   let weightedArr = [];
 
   for (let i = 0; i < gradeArr.length; i++) {
@@ -27,45 +23,77 @@ let calculateMyGrade = () => {
   weightedArr.forEach((item) => {
     start += item;
   });
-  //   console.log(start);
   generateGrade(start);
 };
-function renderButtons() {
-  // Use JSON.parse() to convert text to JavaScript object
+let renderTable = () => {
+  let infor = event.target.innerText;
+  console.log("clicked");
+  console.log(infor); //gives the inner text of the button that has been clicked
+  //   console.log(key)
+  className.value = infor;
+  let grabStorage = JSON.parse(localStorage.getItem(infor));
+  console.log(grabStorage); //returns an array of the information for giving an array of objects
+
+  for (let i = 0; i < grabStorage.length; i++) {
+    let newRow = document.createElement("tr");
+    let assignmentBox = document.createElement("td");
+    let gradeBox = document.createElement("td");
+    let weightBox = document.createElement("td");
+    assignmentBox.innerText = grabStorage[i].assignment;
+    gradeBox.innerText = grabStorage[i].grade;
+    weightBox.innerText = grabStorage[i].weight;
+    assignmentBox.setAttribute("class", "tableCellContainer");
+    gradeBox.setAttribute("class", "tableCellContainer");
+    weightBox.setAttribute("class", "tableCellContainer");
+
+    newRow.append(assignmentBox, gradeBox, weightBox);
+
+    newRow.setAttribute("class", "tableRowContainer");
+
+    tableBody.appendChild(newRow);
+  }
+};
+let clickEvent = () => {
+  let bttns = document.querySelectorAll(".clickedBtn");
+  for (let i = 0; i < bttns.length; i++) {
+    bttns[i].addEventListener("click", renderTable);
+  }
+};
+let renderButtons = () => {
+  savedContanier.innerHTML = "";
   let classList = [];
+  console.log(classList);
   for (var i = 0; i < localStorage.length; i++) {
     classList[i] = localStorage.getItem(localStorage.key(i));
   }
-  //   var classList = JSON.parse(localStorage.getItem());
-  // Check if data is returned, if not exit out of the function
   for (var i = 0; i < classList.length; i++) {
     if (classList !== null) {
       let key = localStorage.key(i);
       let newBttn = document.createElement("button");
+      //   newBttn.forEach(renderTable(key));
+      newBttn.classList.add("clickedBtn");
       newBttn.innerText = key;
       savedContanier.append(newBttn);
-      //   document.getElementById("saved-name").innerHTML = lastGrade.student;
-      //   document.getElementById("saved-grade").innerHTML = lastGrade.grade;
-      //   document.getElementById("saved-comment").innerHTML = lastGrade.comment;
+      clickEvent();
     } else {
       return;
     }
   }
-}
-let saveClass = () => {
-  //   console.log("saving your class now!");
-  //   let classValue = className.value;
+  //   let grabBttns = document.querySelectorAll(".clickBtn");
+  //   console.log(grabBttns);
+  //   grabBttns.addEventListener("click", renderTable);
+};
+let storeClass = () => {
   localStorage.setItem(className.value.toLowerCase(), JSON.stringify(gradeArr));
-  for (var i = 0; i < localStorage.length; i++) {
-    let key = localStorage.key(i);
-    let newBttn = document.createElement("button");
-    newBttn.innerText = key;
-    savedContanier.append(newBttn);
-  }
   className.value = "";
+  renderButtons();
 };
 
 let generateGrade = (num) => {
+  results.innerHTML = "";
+  tableBody.innerHTML = "";
+  //   let tableRow = document.getElementsByTagName("tr");
+  //   tableRow.innerHTML = "";
   let classH1 = document.createElement("h1");
   let totalGrade = document.createElement("h2");
   let saveBttn = document.createElement("button");
@@ -80,7 +108,7 @@ let generateGrade = (num) => {
   results.appendChild(saveBttn);
 
   let save = document.getElementById("save");
-  save.addEventListener("click", saveClass);
+  save.addEventListener("click", storeClass);
 };
 
 let addNewRow = () => {

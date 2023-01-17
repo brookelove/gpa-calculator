@@ -46,6 +46,12 @@ button {
     background-color: var(--title);
     border: solid 3px var(--light);
     border-radius: 10px;
+    transition: 0.3s;
+}
+button:hover {
+    color: var(--title);
+    background-color: var(--light);
+    border: solid 3px var(--title);
 }
 footer {
     text-align: center;
@@ -96,6 +102,9 @@ footer {
     width: 20%;
     text-align: center;
     height: 50vh;
+}
+.savedClasses button {
+    margin: 4% 0%;
 }
 .main {
     text-align: center;
