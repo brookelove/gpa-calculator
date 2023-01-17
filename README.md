@@ -73,10 +73,11 @@ Just a simple grade calculator in a minimalist format.
 
 4. You can revist saved classes by clicking on the My Classes.
 
-#### Check Out the Live Website 
+#### Check Out the Website
 
+<p align="center>
     <a href="https://brookelove.github.io/gpa-calculator/" style="color: pink; text-decoration: underline;text-decoration-style: dotted; font-weight: 700">A Simple Calculator</a>
-
+</p>
 
 ## Next
 
