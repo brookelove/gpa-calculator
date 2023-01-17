@@ -74,8 +74,11 @@ let addNewRow = () => {
 
   delBttnBox.appendChild(delBttn);
   editBttnBox.appendChild(editBttn);
-
-  newRow.append(assignmentBox, gradeBox, weightBox, delBttn, editBttn);
+  assignmentBox.setAttribute("class", "tableCellContainer");
+  gradeBox.setAttribute("class", "tableCellContainer");
+  weightBox.setAttribute("class", "tableCellContainer");
+  newRow.append(assignmentBox, gradeBox, weightBox);
+  newRow.setAttribute("class", "tableRowContainer");
 
   tableBody.appendChild(newRow);
   assignmentInput.value = "";
