@@ -9,9 +9,10 @@ let gradeInput = document.getElementById("grade");
 let weightInput = document.getElementById("weight");
 let className = document.getElementById("className");
 let results = document.getElementById("results");
-let saveBttn = document.getElementById("saveClassBttn");
+let saveBttn = document.getElementsByTagName("button"[2]);
 let gradeArr = [];
 let start = 0;
+// console.log(document.getElementsByTagName("button"));
 
 let calculateMyGrade = () => {
   //   className.value = "";
@@ -31,23 +32,20 @@ let calculateMyGrade = () => {
 };
 
 let generateGrade = (num) => {
-  // if else statement to either create a new div or write over a current one
-  //   console.log(className);
-  //   console.log(className.value);
-  //   console.log(num);
-  //   if (className.value == " ") {
-  //     className.value = "Class";
-  //   }
   let classH1 = document.createElement("h1");
   let totalGrade = document.createElement("h2");
   let saveBttn = document.createElement("button");
   classH1.innerText = className.value;
   totalGrade.innerText = String(num).concat("%");
-  saveBttn.innerText = "Save Class";
-  saveBttn.setAttribute = ("id", "saveClassBttn");
-  results.append(classH1, totalGrade, saveBttn);
+  saveBttn.innerText = "Save Class Here";
+  saveBttn.setAttribute("id", "save");
+  console.log(saveBttn);
+  results.append(classH1, totalGrade);
+  results.appendChild(saveBttn);
 };
-
+let saveClass = () => {
+  console.log("saving your class now!");
+};
 let addNewRow = () => {
   let newGrade = {
     assignment: assignmentInput.value,
@@ -74,10 +72,13 @@ let addNewRow = () => {
 
   delBttnBox.appendChild(delBttn);
   editBttnBox.appendChild(editBttn);
+
   assignmentBox.setAttribute("class", "tableCellContainer");
   gradeBox.setAttribute("class", "tableCellContainer");
   weightBox.setAttribute("class", "tableCellContainer");
+
   newRow.append(assignmentBox, gradeBox, weightBox);
+
   newRow.setAttribute("class", "tableRowContainer");
 
   tableBody.appendChild(newRow);
@@ -87,3 +88,4 @@ let addNewRow = () => {
 };
 addRowBTN.addEventListener("click", addNewRow);
 calculateBTN.addEventListener("click", calculateMyGrade);
+saveBttn.addEventListener("click", saveClass);
