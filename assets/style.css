@@ -154,6 +154,34 @@ thead {
     font-size: 20px;
     width: fit-content
 }
+
 .tableCellContainer {
     color:var(--dark);
+}
+.none{
+    display: none;
+}
+@media screen and (min-width: 320px ) {
+    header{ 
+        font-size: 30px;
+        margin-bottom: 15px;
+        height: fit-content;
+
+    }
+    .main {
+        width: 100%;
+    }
+    .formContainer{
+        flex-direction: column;
+    }
+    .savedClasses{
+        width: 100%;
+        height: fit-content;
+        margin: 10% 0;
+    }
+    .inputContainer {
+        flex-direction: column-reverse;
+    }
+
+
 }

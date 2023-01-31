@@ -26,6 +26,10 @@ let calculateMyGrade = () => {
   generateGrade(start);
 };
 let renderTable = () => {
+  // if (tableBody.childElementCount == 0) {
+  //   tableBody.setAttribute("class", "none");
+  // }
+  console.log(tableBody.childElementCount);
   let infor = event.target.innerText;
   //   console.log("clicked");
   //   console.log(infor); //gives the inner text of the button that has been clicked
@@ -125,6 +129,7 @@ let generateGrade = (num) => {
 };
 
 let addNewRow = () => {
+  console.log(tableBody.childElementCount);
   let newGrade = {
     assignment: assignmentInput.value,
     grade: gradeInput.value,
