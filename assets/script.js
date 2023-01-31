@@ -129,7 +129,6 @@ let generateGrade = (num) => {
 };
 
 let addNewRow = () => {
-  console.log(tableBody.childElementCount);
   let newGrade = {
     assignment: assignmentInput.value,
     grade: gradeInput.value,
